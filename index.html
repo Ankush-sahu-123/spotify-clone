@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="utility.css">
+    <title>Spotify - Web Player: Music for everyone</title>
+    <script src="https://kit.fontawesome.com/d5ddc5c493.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container flex">
+        <div class="left">
+            <div class="home m-1 bg_grey p-1">
+                <div class="logo invert"><img src="logo.svg" style="cursor: pointer;" alt=""></div>
+                <ul>
+                    <li onclick="backToHome()"><img class="invert" src="home.svg" alt="home">Home</li>
+                    <li class="search"><img src="search.svg" alt="search">Search</li>
+                </ul>
+            </div>
+            <div class="library m-1 bg_grey p-1">
+                <div class="heading sb-1">
+                    <button class="library-icon-text b-1"><img class="invert" src="playlist.svg" alt="">Your
+                        Library</button>
+                    <button class="b-1 invert"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 -3 24 24" style="fill: #818181; cursor: pointer;">
+                            <path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6z"></path>
+                        </svg></button>
+                </div>
+
+                <div class="footer ">
+                    <div><a href="https://www.spotify.com/in-en/legal/"><span>Legal</span></a></div>
+                    <div><a href="https://www.spotify.com/in-en/privacy/"><span>Privacy Center</span></a></div>
+                    <div><a href="https://www.spotify.com/in-en/legal/privacy-policy/"><span>PrivacyPolicy</span></a>
+                    </div>
+                    <div><a href="https://www.spotify.com/in-en/legal/cookies-policy/"><span>Cookies</span></a></div>
+                    <div><a href="https://www.spotify.com/in-en/legal/privacy-policy/#s3"><span>About Ads</span></a>
+                    </div>
+                    <div><a href="https://www.spotify.com/in-en/accessibility/"><span>Accessibility</span></a></div>
+                </div>
+            </div>
+        </div>
+        <div class="right bg_grey">
+            <div class="header sb-1">
+                <div class="nav">
+                    <button onclick="backToHome()"><svg xmlns="http://www.w3.org/2000/svg" width="35" height="30" viewBox="0 -2 24 24"
+                            style="fill: white;transform: msFilter;">
+                            <path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"></path>
+                        </svg></button>
+                    <button><svg xmlns="http://www.w3.org/2000/svg" width="35" height="30" viewBox="0 -2 24 24"
+                            style="fill: white;transform: msFilter;">
+                            <path d="M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z"></path>
+                        </svg></button>
+                </div>
+                <div class="button">
+                    <button class="sign b-1">Sign up</button>
+                    <button class="log">Log in</button>
+                </div>
+            </div>
+            <div class="music-container">
+                <div class="musics" id="spotifyPlaylist">
+                    <h2>Spotify Playlists</h2>
+                    <div class="card-container">
+                        <div class="card" data-name="Likhe Jo Khat Tujhe" data-singer="Raj Barman" data-image="./images/likhe jo khat tujhe.jpeg"
+                        data-audio="./songs/Likhe Jo Khat Tujhe.mp3" onclick="songClick()">
+                            <div class="img-box">
+                                <button class="b-1"><i class="fa-solid fa-play"></i></button>
+                                <img id="songImgCLicked" src="./images/likhe jo khat tujhe.jpeg" alt="">
+                            </div>
+                            <h4 >Likhe Jo Khat Tujhe</h4>
+                            <p >Raj Barman</p>
+                            <audio  id="song">
+                                <source src="./songs/Likhe Jo Khat Tujhe.mp3" type="audio/mpeg">
+                            </audio>
+                        </div>
+                        <div class="card" data-name="Pehli Dafa" data-singer="Atif Aslam" data-image="./images/pehli dafa.jpeg"    data-audio="./songs/Pehli Dafa.mp3" onclick="songClick()">
+                            <div class="img-box">
+                                <button class="b-1"><i class="fa-solid fa-play"></i></button>
+                                <img id="songImgCLicked" src="./images/pehli dafa.jpeg" alt="">
+                            </div>
+                            <h4>Pehli Dafa</h4>
+                            <p>Atif Aslam</p>
+                            <audio  id="song">
+                                <source src="./songs/Pehli Dafa.mp3" type="audio/mpeg">
+                            </audio>
+                        </div>
+                        <div class="card" data-name="Main Agar" data-singer="Pritam & Atif Aslam" data-image="./images/main agar.jpeg" data-audio="./songs/Main Agar.mp3" onclick="songClick()">
+                            <div class="img-box">
+                                <button class="b-1"><i class="fa-solid fa-play"></i></button>
+                                <img src="./images/main agar.jpeg" alt="">
+                            </div>
+                            <h4>Main Agar</h4>
+                            <p>Pritam & Atif Aslam</p>
+                            <audio  id="song">
+                                <source src="./songs/Main Agar.mp3" type="audio/mpeg">
+                            </audio>
+                        </div>
+                        <div class="card" data-name="Ram Siya Ram" data-singer="Sachet-Parampara & Manoj Muntasir" data-image="./images/ram siya ram.jpeg" data-audio="./songs/Ram Siya Ram.mp3" onclick="songClick()">
+                            <div class="img-box">
+                                <button class="b-1"><i class="fa-solid fa-play"></i></button>
+                                <img src="./images/ram siya ram.jpeg" alt="">
+                            </div>
+                            <h4>Ram Siya Ram</h4>
+                            <p>Sachet-Parampara & Manoj Muntasir</p>
+                            <audio  id="song">
+                                <source src="./songs/Ram Siya Ram.mp3" type="audio/mpeg">
+                            </audio>
+                        </div>
+                        <div class="card" data-name="Tere Sang Yaara" data-singer="Atif Aslam" data-image="./images/tere sang yara.jpeg" data-audio="./songs/tere sang yara.mp3" onclick="songClick()">
+                            <div class="img-box">
+                                <button class="b-1"><i class="fa-solid fa-play"></i></button>
+                                <img src="./images/tere sang yara.jpeg" alt="">
+                            </div>
+                            <h4>Tere Sang Yaara</h4>
+                            <p>Atif Aslam</p>
+                            <audio  id="song">
+                                <source src="./songs/tere sang yara.mp3" type="audio/mpeg">
+                            </audio>
+                        </div>
+                        <div class="card" data-name="Main Dhoondne Ko Zamaane Mein" data-singer="Arijit Singh" data-image="./images/main dhoondne.jpeg" data-audio="./songs/Main Dhoondne Ko Zamaane Mein.mp3" onclick="songClick()">
+                            <div class="img-box">
+                                <button class="b-1"><i class="fa-solid fa-play"></i></button>
+                                <img src="./images/main dhoondne.jpeg" alt="">
+                            </div>
+                            <h4>Main Dhoondne Ko Zamaane Mein</h4>
+                            <p>Arijit Singh</p>
+                            <audio  id="song">
+                                <source src="./songs/Main Dhoondne Ko Zamaane Mein.mp3" type="audio/mpeg">
+                            </audio>
+                        </div>
+                        <div class="card" data-name="Pal" data-singer="Shreya Ghoshal & Arijit" data-image="./images/pal.jpeg" data-audio="./songs/Pal.mp3" onclick="songClick()">
+                            <div class="img-box">
+                                <button class="b-1"><i class="fa-solid fa-play"></i></button>
+                                <img src="./images/pal.jpeg" alt="">
+                            </div>
+                            <h4>Pal</h4>
+                            <p>Shreya Ghoshal & Arijit</p>
+                            <audio  id="song">
+                                <source src="./songs/Pal.mp3" type="audio/mpeg">
+                            </audio>
+                        </div>
+                        <div class="card" data-name="Maan Meri Jaan" data-singer="King" data-image="./images/maan meri jaan.jpeg" data-audio="./songs/Maan Meri Jaan.mp3" onclick="songClick()">
+                            <div class="img-box">
+                                <button class="b-1"><i class="fa-solid fa-play"></i></button>
+                                <img src="./images/maan meri jaan.jpeg" alt="">
+                            </div>
+                            <h4>Maan Meri Jaan</h4>
+                            <p>King</p>
+                            <audio  id="song">
+                                <source src="./songs/Maan Meri Jaan.mp3" type="audio/mpeg">
+                            </audio>
+                        </div>
+                    </div>
+                </div>
+                <div class="song-page" id="songPage">
+                    <div class="song">
+                        <div class="song-img">
+                            <img id="songImgPlay" src="./images/likhe jo khat tujhe.jpeg" alt="">
+                            <h4 id="songName">Dinner with Friends</h4>
+                            <p id="singerName">The perfect soundtrack to those long nights over dinner</p>
+                        </div>
+                    </div>
+                    <div class="playbar">
+                        <input type="range" value="0" id="progress">
+                        <div class="song-button">
+                            <div><i class="fa-solid fa-backward"></i></div>
+                            <div onclick="playPause()"><i id="ctrlIcon" class="fa-solid fa-play"></i></div>
+                            <div><i class="fa-solid fa-forward"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let spotifyPlaylist = document.getElementById("spotifyPlaylist");
+        let songPage = document.getElementById("songPage");
+        let songImgPlay = document.getElementById("songImgPlay");
+        let song = document.getElementById("song");
+        let songName = document.getElementById("songName");
+        let singerName = document.getElementById("singerName");
+        const cards = document.querySelectorAll('.card');
+        const audios = document.querySelectorAll('audio');
+        let ctrlIcon = document.getElementById("ctrlIcon");
+        
+        
+
+
+        cards.forEach(card => {
+    card.addEventListener('click', () => {
+        const imageSrc = card.getAttribute('data-image');
+        const audioSrc = card.getAttribute('data-audio');
+        const name = card.getAttribute('data-name');
+        const singer = card.getAttribute('data-singer');
+        songImgPlay.setAttribute('src', imageSrc);
+        song.setAttribute("src",audioSrc);
+        songName.textContent = name;
+        singerName.textContent = singer;
+    });
+});
+
+        
+        song.onloadedmetadata = function(){
+            progress.max = song.duration;
+            progress.value = song.currentTime;
+        }
+    
+        function songClick(){
+            spotifyPlaylist.style.display="none";
+            songPage.style.display="block";
+
+        }
+
+        function playPause(){
+            if(ctrlIcon.classList.contains("fa-pause")){
+                song.pause();
+                ctrlIcon.classList.remove("fa-pause");
+                ctrlIcon.classList.add("fa-play");
+            }
+            else{
+                song.play();
+                ctrlIcon.classList.add("fa-pause");
+                ctrlIcon.classList.remove("fa-play");
+            }
+        }
+        
+        
+        function backToHome(){
+            if(ctrlIcon.classList.contains("fa-pause")){
+                song.pause();
+                ctrlIcon.classList.remove("fa-pause");
+                ctrlIcon.classList.add("fa-play");
+            }
+            spotifyPlaylist.style.display="block";
+            songPage.style.display="none";
+        }
+
+        if(song.play()){
+            setInterval(()=>{
+                progress.value = song.currentTime;
+            },500);
+        }
+        
+        if(song.duration == progress.value.max){
+            ctrlIcon.classList.remove("fa-pause");
+            ctrlIcon.classList.add("fa-play");
+        }
+
+        
+
+        progress.onchange = function(){
+            song.play();
+            song.currentTime = progress.value;
+            ctrlIcon.classList.add("fa-pause");
+            ctrlIcon.classList.remove("fa-play");
+        }
+
+    </script>
+</body>
+
+</html>
