@@ -1,4 +1,4 @@
-# Spotify-clone
+# spotify-clone
 A Responsive music website look like spotify.
 
 This project i have made in two phases
