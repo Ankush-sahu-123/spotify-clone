@@ -16,14 +16,13 @@
             <div class="home m-1 bg_grey p-1">
                 <div class="logo invert"><img src="./logos/logo.svg" style="cursor: pointer;" alt=""></div>
                 <ul>
-                    <li onclick="backToHome()"><img class="invert" src="./logos/home.svg" alt="home">Home</li>
-                    <li class="search"><img src="./logos/search.svg" alt="search">Search</li>
+                    <li onclick="backToHome()"><img class="invert" src="./logos/home.svg" alt="home"><h4>Home</h4></li>
+                    <li class="search"><img src="./logos/search.svg" alt="search"><h4>Search</h4></li>
                 </ul>
             </div>
             <div class="library m-1 bg_grey p-1">
                 <div class="heading sb-1">
-                    <button class="library-icon-text b-1"><img class="invert" src="./logos/playlist.svg" alt="">Your
-                        Library</button>
+                    <button class="library-icon-text b-1"><img class="invert" src="./logos/playlist.svg" alt=""><h4>Your Library</h4></button>
                     <button class="b-1 invert"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                             viewBox="0 -3 24 24" style="fill: #818181; cursor: pointer;">
                             <path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6z"></path>
@@ -147,7 +146,7 @@
                                 <img src="./images/maan meri jaan.jpeg" alt="">
                             </div>
                             <h4>Maan Meri Jaan</h4>
-                            <p>King</p>
+                  <p>King</p>
                             <audio  id="song">
                                 <source src="./songs/Maan Meri Jaan.mp3" type="audio/mpeg">
                             </audio>
@@ -158,106 +157,23 @@
                     <div class="song">
                         <div class="song-img">
                             <img id="songImgPlay" src="./images/likhe jo khat tujhe.jpeg" alt="">
-                            <h4 id="songName">Dinner with Friends</h4>
+                            <h3 id="songName">Dinner with Friends</h3>
                             <p id="singerName">The perfect soundtrack to those long nights over dinner</p>
                         </div>
                     </div>
                     <div class="playbar">
                         <input type="range" value="0" id="progress">
                         <div class="song-button">
-                            <div><i class="fa-solid fa-backward"></i></div>
+                            <div onclick="backWard()"><i class="fa-solid fa-backward"></i></div>
                             <div onclick="playPause()"><i id="ctrlIcon" class="fa-solid fa-play"></i></div>
-                            <div><i class="fa-solid fa-forward"></i></div>
+                            <div onclick="forWard()"><i class="fa-solid fa-forward"></i></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <script>
-        let spotifyPlaylist = document.getElementById("spotifyPlaylist");
-        let songPage = document.getElementById("songPage");
-        let songImgPlay = document.getElementById("songImgPlay");
-        let song = document.getElementById("song");
-        let songName = document.getElementById("songName");
-        let singerName = document.getElementById("singerName");
-        const cards = document.querySelectorAll('.card');
-        const audios = document.querySelectorAll('audio');
-        let ctrlIcon = document.getElementById("ctrlIcon");
-        
-        
-
-
-        cards.forEach(card => {
-    card.addEventListener('click', () => {
-        const imageSrc = card.getAttribute('data-image');
-        const audioSrc = card.getAttribute('data-audio');
-        const name = card.getAttribute('data-name');
-        const singer = card.getAttribute('data-singer');
-        songImgPlay.setAttribute('src', imageSrc);
-        song.setAttribute("src",audioSrc);
-        songName.textContent = name;
-        singerName.textContent = singer;
-    });
-});
-
-        
-        song.onloadedmetadata = function(){
-            progress.max = song.duration;
-            progress.value = song.currentTime;
-        }
-    
-        function songClick(){
-            spotifyPlaylist.style.display="none";
-            songPage.style.display="block";
-
-        }
-
-        function playPause(){
-            if(ctrlIcon.classList.contains("fa-pause")){
-                song.pause();
-                ctrlIcon.classList.remove("fa-pause");
-                ctrlIcon.classList.add("fa-play");
-            }
-            else{
-                song.play();
-                ctrlIcon.classList.add("fa-pause");
-                ctrlIcon.classList.remove("fa-play");
-            }
-        }
-        
-        
-        function backToHome(){
-            if(ctrlIcon.classList.contains("fa-pause")){
-                song.pause();
-                ctrlIcon.classList.remove("fa-pause");
-                ctrlIcon.classList.add("fa-play");
-            }
-            spotifyPlaylist.style.display="block";
-            songPage.style.display="none";
-        }
-
-        if(song.play()){
-            setInterval(()=>{
-                progress.value = song.currentTime;
-            },500);
-        }
-        
-        if(song.duration == progress.value.max){
-            ctrlIcon.classList.remove("fa-pause");
-            ctrlIcon.classList.add("fa-play");
-        }
-
-        
-
-        progress.onchange = function(){
-            song.play();
-            song.currentTime = progress.value;
-            ctrlIcon.classList.add("fa-pause");
-            ctrlIcon.classList.remove("fa-play");
-        }
-
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
