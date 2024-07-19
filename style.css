@@ -228,7 +228,7 @@ button.log:hover{
     border-radius: 8px;
 }
 
-.card h4{
+.card h3{
     margin-top: 5px;
     font-weight: normal;
     font-size: 1.5vh;
@@ -360,7 +360,6 @@ button.log:hover{
 
 .song{
     margin-top: 10vh;
-    width: 60vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -374,7 +373,6 @@ button.log:hover{
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
         justify-content:space-between;
-        
         max-height: 70vh;
     }
 
@@ -388,6 +386,25 @@ button.log:hover{
 }
 
 @media (max-width:860px) {
+
+    .song-page{
+        margin: 10px;
+        border-radius: 10px;
+        background-image: linear-gradient(#1e1e1e, #121212);
+        height: 75vh;
+        width: 60vw;
+    }
+
+    .song-img{
+        width: 40vw;
+    }
+    
+    .song-img img{
+        box-shadow: 0 10px 60px rgba(255, 255, 255, 0.247);
+        width: 40vw;
+        border-radius: 20px;
+    }
+
     .card-container{
         padding-left: 10px;
         display: grid;
@@ -406,10 +423,27 @@ button.log:hover{
     }
 }
 @media (max-width:720px) {
+    .left{
+        width:150px;
+    }
+
+    h4{
+        display: none;
+    }
+    .heading{
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: left;
+        width: 30px;
+    }
+    
+    .footer{
+        display: none;
+    }
     .card-container{
         padding-left: 0;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(30vw, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(28vw, 1fr));
         justify-content:space-between;
         
         max-height: 70vh;
@@ -421,5 +455,74 @@ button.log:hover{
         padding:15px;
         border-radius: 8px;
         position: relative;
+    }
+}
+
+@media (max-width:500px) {
+    .left{
+        display: none;
+    }
+    .right {
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+        position: relative;
+    }
+
+    .card-container{
+        padding-left: 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(40vw, 1fr));
+        justify-content:space-between;
+        max-height: 70vh;
+    }
+
+    .card{
+        width: 40vw;
+        height:100%;
+        padding:15px;
+        border-radius: 8px;
+        position: relative;
+    }
+
+    .song-page{
+        margin-top: 85px;
+        border-radius: 10px;
+        background-image: linear-gradient(#575757, #121212);
+        height: 90vh;
+        width: 90vw;
+        top: 0;
+        bottom: 0;
+        position: absolute;
+    }
+
+    .song-img{
+        width: 80vw;
+    }
+    
+    .song-img img{
+        box-shadow: 0 0px 0px rgba(255, 255, 255, 0.247);
+        width: 80vw;
+        border-radius: 20px;
+        margin-bottom: 20px;
+    }
+
+
+    .playbar{
+        bottom: 0;
+        position: absolute;
+        padding-bottom: 50px;
+    }
+    
+}
+
+@media (max-width:500px){
+    .header .button{
+        display: none;
+    }
+    .musics{
+        height: 100vh;
+        margin: 0;
+        border-radius: 0;
     }
 }
